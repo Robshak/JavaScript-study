@@ -42,11 +42,17 @@ function saveData(){
     localStorage.setItem(HABIT_KEY, JSON.stringify(habits));
 }
 
+function getHabitForId(id){
+    for(const i in habits){
+        if(id === habits[i].id){
+            return i;
+        }
+    }
+}
+
 function validateForm(form, fields){
     const formData = new FormData(form);
-    const res = {
-
-    };
+    const res = {};
     for(const field of fields){
         const fieldValue = formData.get(field);
         form[field].classList.remove('inputError');
@@ -145,7 +151,6 @@ function rerenderComments(activeHabit, activeComment = -1){
 }
 
 function rerender(activeHabitId){
-    console.log(habits);
     if(habits.length === 0){
         document.querySelector('.mainPage').classList.add('cover_hidden');
         document.querySelector('.mainPage_alt').classList.remove('cover_hidden');
@@ -198,10 +203,11 @@ function reworkDay(event, commentId){
     event.preventDefault();
     const data = validateForm(event.target, ['rework']);
     if(!data){
+        rerender(globalActiveHabitId);
         return;
     }
 
-    habits[globalActiveHabitId - 1].days[commentId].comment = data.rework;
+    habits[getHabitForId(globalActiveHabitId)].days[commentId].comment = data.rework;
     rerender(globalActiveHabitId);
     saveData();
 }
@@ -270,7 +276,12 @@ function delHabit(){
     let urlHabitId;
     if(habits.length){
         const hashId = Number(document.location.hash.replace('#', ''));
-        urlHabitId = habits.find((habit) => habit.id == hashId).id;
+        if(!hashId){
+            urlHabitId = habits[0].id;
+        }
+        else{
+            urlHabitId = habits.find((habit) => habit.id == hashId).id;
+        }
         if(!urlHabitId){
             urlHabitId = habits[0].id;
         }
