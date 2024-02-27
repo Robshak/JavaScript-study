@@ -1,0 +1,85 @@
+.cover{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover_hidden{
+    display: none;
+}
+
+.popup{
+    position: relative;
+    padding: 30px 40px 20px 40px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
+
+.cover-deleteHabit .popup{
+    padding: 50px 50px 30px 50px;
+}
+
+.popup,
+.popup__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup__name{
+    margin-bottom: 20px;
+}
+
+.popup__text{
+    margin-bottom: 5px;
+}
+
+.simpleIconButton{
+    border: none;
+    background-color: #FFF;
+    padding: 15px;
+    border-radius: 20px;
+    border: 2px solid var(--main-color);
+    margin: 5px 5px 30px 5px;
+}
+
+.popup__inputName{
+    margin-bottom: 10px;
+}
+
+.popup__inputGoal{
+    margin-bottom: 30px;
+}
+
+.popupInput {
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.popupInput{
+    width: 400px;
+    border: 1px solid var(--support-color);
+    padding: 10px 20px;
+}
+
+.popupInput:focus {
+    outline: none !important;
+    border: 1px solid var(--support-color-dark);
+}
+
+.popup__close{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    padding: 5px 10px;
+    background-color: #FFF;
+    border: none;
+    border-radius: 10px;
+}
+

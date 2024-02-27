@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit tracker</title>
+
+    <!-- <script src="./main.js"></script> -->
+
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/sidePanel.css">
+    <link rel="stylesheet" href="./styles/mainPage.css">
+    <link rel="stylesheet" href="./styles/popup.css">
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"> -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidePanel">
+        <img src="./imgs/logo/Group 74.svg" alt="Habbit icon" class="sidePanel__icon">
+        <div class="sidePanel__habitsBlock">
+            <ul class="sidePanel__list"></ul>
+            <button class="simpleButton add__element" onclick="togglePopupHabit()"><img src="./imgs/icon/Add.svg" alt=""></button>
+        </div>
+    </div>
+    <div class="mainPage">
+        <header class="mainPage__head mainPage__element">
+            <div class="head__nameBlock">
+                <h1 class="mainPage__name">
+                    -
+                </h1>
+                <button class="simpleButton content__button" onclick="togglePopupDel()"><img src="./imgs/icon/delete.svg"
+                    alt=""></button>
+            </div>
+            <div class="mainPage__progressBlock">
+                <div class="progressBlock__info">
+                    <div class="progressBlock__text">Progress</div>
+                    <div class="progressBlock__status">-%</div>
+                </div>
+                <div class="progressBlock__progressbar">
+                    <div class="progressBlock__progresscover-bar"></div>
+                </div>
+            </div>
+        </header>
+        <div class="mainPage__body">
+            <section class="mainPage__commentsList mainPage__element"></section>
+            <div class="body__element commentForm">
+                <div class="element__day commentForm__day">Day _</div>
+                <form class="element__content element__content_active" onsubmit="addDay(event)">
+                    <label for="comment">
+                        <img src="./imgs/icon/comment.svg" alt="">
+                    </label>
+                    <input name="comment" type="text" placeholder="Comment" class="input" id="comment">
+                    <button class="simpleButton content__button_make" type="submit">Done</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="mainPage_alt cover_hidden">
+        <h1>You don’t have any habits yet, would you like to create one?</h1>
+        <button class="simpleButton add__element" onclick="togglePopupHabit()"><img src="./imgs/icon/Add.svg" alt=""></button>
+    </div>
+    <div class="cover cover-createHabit cover_hidden">
+        <div class="popup">
+            <button class="simpleButton popup__close" onclick="togglePopupHabit()">
+                <img src="./imgs/icon/cross.svg" alt="">
+            </button>
+            <h1 class="popup__name">
+                New habit
+            </h1>
+            <div class="popup__text">
+                Icon
+            </div>
+            <div class="popup__icons">
+                <button class="simpleButton simpleIconButton button_active" onclick="setIcon(this, 'sport')"><img src="./imgs/icon/sport.svg" alt=""></button>
+                <button class="simpleButton simpleIconButton" onclick="setIcon(this, 'Water')"><img src="./imgs/icon/Water.svg" alt=""></button>
+                <button class="simpleButton simpleIconButton" onclick="setIcon(this, 'food')"><img src="./imgs/icon/food.svg" alt=""></button>
+            </div>
+            <form class="popup__form" onsubmit="createHabit(event)">
+                <input type="text" name="icon" id="icon" hidden value="sport">
+                <input type="text" name="habitName" id="habitName" placeholder="Name" class="popupInput popup__inputName">
+                <input type="text" name="goal" id="goal" placeholder="Goal" class="popupInput popup__inputGoal">
+                <button class="simpleButton popup__button" type="submit">
+                    Add
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="cover cover-deleteHabit cover_hidden">
+        <div class="popup">
+            <button class="simpleButton popup__close" onclick="togglePopupDel()">
+                <img src="./imgs/icon/cross.svg" alt="">
+            </button>
+            <h1 class="popup__name">
+                Delete this habit?
+            </h1>
+            <div class="popup__buttons">
+                <button class="simpleButton popup__button" onclick="delHabit()">Yes</button>
+                <button class="simpleButton popup__button" onclick="togglePopupDel()">No</button>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

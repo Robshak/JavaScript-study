@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --main-background-color: #F3F6FD;
+    --support-background-color: #FBFAFF;
+    --main-color: #5051F9;
+    --main-color-light: #EDECFE;
+    --support-color: #D3DBFF;
+    --support-color-dark: #94A3BD;
+    --progressbar-background: #E6E9ED;
+
+    --max-size: 1500px;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+    background-color: var(--main-background-color);
+    margin: 0px;
+    display: flex;
+}
+
+.simpleButton:hover {
+    filter: brightness(95%);
+}
+
+.simpleButton:active {
+    filter: brightness(90%);
+}
+
+.button_active {
+    background-color: var(--main-color) !important;
+}
+
+.button_active img {
+    filter: brightness(0) invert(1);
+}
+
+.popup__button {
+    padding: 12px 40px;
+    color: var(--main-color);
+    background-color: var(--main-color-light);
+    border: none;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+h1{
+    margin: 0px;
+    font-weight: normal;
+}
+
+.inputError{
+    border: 1px solid red !important;
+}
+
+@media (max-width: 1000px) {
+    body{
+        flex-direction: column;
+    }
+}
