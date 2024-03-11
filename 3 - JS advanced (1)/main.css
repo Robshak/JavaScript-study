@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    text-align: center;
+    background-color: #16171D;
+    color: #FFF;
+    font-size: 32px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: none;
+    border: 1px solid gray;
+}
+
+.inner{
+    text-align: center;
+    padding: 20px;
+    background-color: none;
+    border: 1px solid gray;
+}
+
+.activeInner{
+    background-color: yellow;
+}
+
+.button{
+    background-color: none;
+    border: 1px solid gray;
+}

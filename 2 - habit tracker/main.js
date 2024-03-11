@@ -220,6 +220,7 @@ function togglePopupHabit(){
     document.querySelector('#goal').classList.remove('inputError');
     document.querySelector('#habitName').value = '';
     document.querySelector('#goal').value = '';
+    document.querySelector('#icon').value = 'sport';
     for(const child of page.popup.cover.querySelector('.popup__icons').children){
         child.classList.remove('button_active');
     }
@@ -254,7 +255,7 @@ function createHabit(event){
         "target": Number(data.goal),
         "days": []
     });
-    rerender(habits.length);
+    rerender(nextHabitId);
     saveData();
 }
 
