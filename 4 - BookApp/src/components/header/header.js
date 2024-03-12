@@ -8,10 +8,9 @@ export class Header extends DivComponent{
     }
 
     render() {
-        this.el.innerHTML = '';
         this.el.classList.add('header');
         this.el.innerHTML = `
-            <img src="./static/imgs/logo.svg" alt="logo" />
+            <a href="#"><img src="./static/imgs/logo.svg" alt="logo" /></a>
             <div class="header__body">
                 <a class="header__block header__search" href="#">
                     <img src="./static/imgs/icons/search.svg" alt="search" class="header__img">

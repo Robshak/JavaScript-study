@@ -4,6 +4,8 @@
 
 :root{
     --main-color: #121212;
+    --search-color: #DEDEDE;
+    --search-color-border: #bebebe;
 }
 
 body{
@@ -17,4 +19,8 @@ body{
 a{
     color: var(--main-color);
     text-decoration: none;
+}
+
+.img_inv{
+    filter: invert(1);
 }
