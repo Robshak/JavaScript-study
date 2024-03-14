@@ -1,12 +1,14 @@
 import { MainView } from "./views/main/main.js";
+import { FavoritesView } from "./views/favorites/favorites.js";
 
 class App {
     routes = [
         {path: "", view: MainView},
-        {path: "#favorites", view: MainView}
+        {path: "#favorites", view: FavoritesView}
     ];
     appState = {
-        favorites: []
+        favorites: [],
+        countElementsOnPage: 8
     };
 
     constructor() {
@@ -18,7 +20,6 @@ class App {
         if(this.currentView){
             this.currentView.destroy();
         }
-        // console.log(location.hash);
         const view = this.routes.find(r => r.path == location.hash).view;
         this.currentView = new view(this.appState);
         this.currentView.render();

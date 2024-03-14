@@ -1,0 +1,84 @@
+.book-card{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card__img{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 20px 40px 0px 40px;
+    border-radius: 10px 10px 0px 0px;
+    height: 220px;
+    background-color: var(--search-color-border);
+}
+
+.card__img img{
+    max-height: 200px;
+}
+
+.card__body{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--main-color);
+    border-radius: 0px 0px 10px 10px;
+    padding: 12px;
+}
+
+.card__description{
+    display: flex;
+    flex-direction: column;
+}
+
+.card__genre,
+.card__author{
+    color: var(--search-color);
+    font-size: 11px;
+}
+
+.card__name{
+    color: #FFF;
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.card__addButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 30px;
+    padding: 15px;
+    background-color: var(--main-color);
+    border: 1px solid #FFF;
+    border-radius: 7px;
+}
+
+.card__addButton:hover{
+    background-color: #ffffff2a;
+}
+
+.card__addButton:active,
+.card__addButton_favorite{
+    background-color: #FFF;
+}
+
+.card__addButton:active img,
+.card__addButton_favorite img{
+    filter: invert(0);
+}
+
+.card__addButton_favorite:hover {
+    background-color: #ffffffc2;
+}
+
+.card__addButton_favorite:active{
+    background-color: black;
+}
+
+.card__addButton_favorite:active img{
+    filter: invert(1);
+}
