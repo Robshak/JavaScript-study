@@ -1,0 +1,26 @@
+{
+  "name": "6---tsproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Robshak/JavaScript-study.git"
+  },
+  "author": "Robshak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Robshak/JavaScript-study/issues"
+  },
+  "homepage": "https://github.com/Robshak/JavaScript-study#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.11.30"
+  }
+}
