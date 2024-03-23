@@ -3,7 +3,7 @@ namespace Mediator{
         notify(sender: string, event: string): void;
     }
 
-    abstract class Mediated{ // абстрактный класс, от которого будут наследоваться все классы, которым требуется взаимодействие с другими
+    abstract class Mediated{ // абстрактный пульт управления медиатором
         mediator: IMediator;
         setMediator(mediator: IMediator){
             this.mediator = mediator;
@@ -22,7 +22,7 @@ namespace Mediator{
         }
     }
 
-    class EventHandler extends Mediated{ // обычный класс, которому требуется взаимодействе с другими классами
+    class EventHandler extends Mediated{ // пульт управления медиатором
         myEvent(){
             this.mediator.notify('EventHandler', 'myEvent'); // так мы можем взаимодействовать с ними не прописывая на прямую заимодействие с каждым
         }
